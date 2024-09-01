@@ -1,22 +1,18 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyC7njdJIpgj9kzIOYEqYelVwmo5FtzAiCI",
+    authDomain: "university-marketplace-ac342.firebaseapp.com",
+    projectId: "university-marketplace-ac342",
+    storageBucket: "university-marketplace-ac342.appspot.com",
+    messagingSenderId: "640927315657",
+    appId: "1:640927315657:web:ddc36717814950b6b9bf18"
+};
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCXQHZsAduEdZOSQMIk4pOyBwmS4XmCpEA",
-    authDomain: "unimart-university-marketplace.firebaseapp.com",
-    projectId: "unimart-university-marketplace",
-    storageBucket: "unimart-university-marketplace.appspot.com",
-    messagingSenderId: "779869104748",
-    appId: "1:779869104748:web:1e4fdbf260ef3f0aca4649",
-    measurementId: "G-P2CR6QJLPY"
-  };
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+export const db = getFirestore();
