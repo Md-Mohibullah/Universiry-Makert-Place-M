@@ -17,7 +17,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 const CreateListing = () => {
     const [loading, setLoading] = useState(false);
-    const [geoLoactionEnable, setGeoLocationEnable] = useState(false);
+    // const [geoLoactionEnable, setGeoLocationEnable] = useState(false);
     const [formData, setFormData] = useState({
         type: "featuredListing",
         name: "",
@@ -34,7 +34,7 @@ const CreateListing = () => {
     const {
         category,
         name,
-        bargain,
+        // bargain,
         number,
         old,
         askingPrice,
@@ -111,14 +111,17 @@ const CreateListing = () => {
                 uploadTask.on(
                     "state_changed",
                     (snapshot) => {
-                        const progress =
-                            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                       // const progress =(snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                         // console.log("uplloas is" + progress + "% done");
                         switch (snapshot.state) {
                             case "paused":
                                 // console.log("upload is paused");
                                 break;
                             case "running":
+                                // console.log("upload is runnning");
+                                break;
+
+                            default:
                                 // console.log("upload is runnning");
                         }
                     },

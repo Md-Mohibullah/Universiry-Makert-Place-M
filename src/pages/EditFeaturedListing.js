@@ -13,7 +13,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { db } from "../firebase.config";
-import { addDoc, collection, serverTimestamp, doc, updateDoc, getDoc } from "firebase/firestore";
+import { serverTimestamp, doc, updateDoc, getDoc } from "firebase/firestore";
 
 const EditFeaturedListing = () => {
   const [loading, setLoading] = useState(false);
@@ -35,7 +35,7 @@ const EditFeaturedListing = () => {
   const {
     category,
     name,
-    bargain,
+    // bargain,
     number,
     old,
     askingPrice,
@@ -137,8 +137,7 @@ const EditFeaturedListing = () => {
         uploadTask.on(
           "state_changed",
           (snapshot) => {
-            const progress =
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            //const progress =(snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             // console.log("uplloas is" + progress + "% done");
             switch (snapshot.state) {
               case "paused":
@@ -146,6 +145,10 @@ const EditFeaturedListing = () => {
                 break;
               case "running":
                 // console.log("upload is runnning");
+                break;
+                default:
+                // console.log("upload is runnning");
+
                 
             }
           },

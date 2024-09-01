@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { ImLocation2 } from "react-icons/im";
+// import { ImLocation2 } from "react-icons/im";
 import { db } from "../firebase.config";
 import "../styles/slider.css";
 import { FaRupeeSign } from 'react-icons/fa'
 import {
     collection,
-    getDoc,
+    // getDoc,
     query,
     orderBy,
     limit,
     getDocs,
 } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import SwipeCore, { EffectCoverflow, Navigation, Pagination } from "swiper";
+import SwipeCore, { EffectCoverflow, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
@@ -25,8 +25,8 @@ const Slider = () => {
     const [listings, setListings] = useState(null);
     const [loading, setLoading] = useState(true);
     const navigat = useNavigate();
-    const userPic =
-        "https://openclipart.org/download/247319/abstract-user-flat-3.svg";
+    // const userPic =
+    //     "https://openclipart.org/download/247319/abstract-user-flat-3.svg";
 
     useEffect(() => {
         const fetchListings = async () => {
